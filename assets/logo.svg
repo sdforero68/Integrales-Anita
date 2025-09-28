@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <style>
+      .a{fill:#ffdEB1}.b{fill:#c56535}.c{fill:#553b2b}.d{fill:#90ab44}
+      .txt{font-family: 'Galada', cursive; font-size: 28px; fill:#553b2b}
+    </style>
+  </defs>
+  <circle cx="120" cy="120" r="115" class="a"/>
+  <circle cx="120" cy="120" r="95" class="b" opacity=".18"/>
+  <g>
+    <path class="d" d="M120 30c8 18 14 26 14 42s-14 26-14 26-14-10-14-26 6-24 14-42z"/>
+    <path class="d" d="M120 210c-8-18-14-26-14-42s14-26 14-26 14 10 14 26-6 24-14 42z"/>
+    <path class="d" d="M30 120c18-8 26-14 42-14s26 14 26 14-10 14-26 14-24-6-42-14z"/>
+    <path class="d" d="M210 120c-18 8-26 14-42 14s-26-14-26-14 10-14 26-14 24 6 42 14z"/>
+  </g>
+  <text x="120" y="128" text-anchor="middle" class="txt">Integrales Anita</text>
+</svg>

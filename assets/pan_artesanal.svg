@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320">
+  <rect width="100%" height="100%" fill="#f5e9d2"/>
+  <g transform="translate(0,0)">
+    <circle cx="160" cy="200" r="80" fill="#c56535" opacity=".85"/>
+    <circle cx="250" cy="180" r="90" fill="#c56535" opacity=".65"/>
+    <circle cx="330" cy="210" r="70" fill="#c56535" opacity=".5"/>
+  </g>
+  <text x="50%" y="50%" text-anchor="middle" font-family="Delius, sans-serif" font-size="36" fill="#553b2b">Pan Artesanal</text>
+</svg>

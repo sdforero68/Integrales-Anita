@@ -1,63 +1,303 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi Tienda</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:sans-serif;background:#f5f5f5;display:flex;flex-direction:column;gap:20px;padding:20px}
-    header{display:flex;justify-content:space-between;align-items:center;background:#333;color:#fff;padding:15px 20px;border-radius:10px}
-    nav{display:flex;gap:10px}
-    nav button{background:#555;color:#fff;border:none;padding:10px 15px;border-radius:5px;cursor:pointer;transition:.2s}
-    nav button:hover{background:#777}
-    main{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-    .card{background:#fff;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,.1);padding:15px;text-align:center}
-    .card img{width:100%;border-radius:10px;margin-bottom:10px}
-    .card h3{margin-bottom:5px}
-    .card p{color:#555}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Integrales Anita | Alimentos Artesanales y Saludables</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Delius&family=Galada&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Mi Tienda</h1>
-    <nav>
-      <button>Inicio</button>
-      <button>Cartas</button>
-      <button>Menú</button>
-      <button>Carrito</button>
+  <!-- Topbar / Header -->
+  <header class="topbar">
+    <a class="brand" href="#inicio">
+      <img src="assets/logo.svg" alt="Logo Integrales Anita" />
+      <span>Integrales Anita</span>
+    </a>
+
+    <form class="search" action="#catalogo" method="get">
+      <input type="search" name="q" placeholder="buscar..." aria-label="Buscar" />
+      <button class="icon" aria-label="Buscar">🔍</button>
+    </form>
+
+    <nav class="actions" aria-label="Acciones">
+      <a class="icon" href="#login" aria-label="Iniciar sesión">👤</a>
+      <a class="icon" href="#carrito" aria-label="Carrito">🛒<span class="badge" aria-hidden="true">0</span></a>
+      <a class="icon" href="#contacto" aria-label="Ubicación">📍</a>
     </nav>
   </header>
-  <main>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x150/ffcccb/333?text=Camisa" alt="Camisa">
-      <h3>Camisa Casual</h3>
-      <p>$45.000</p>
+
+  <!-- Hero -->
+  <section id="inicio" class="hero">
+    <div class="hero__copy">
+      <h1>Alimentos Artesanales<br/><span>y Saludables</span></h1>
+      <p class="lema">“Individualmente somos una gota, juntos somos un océano”.</p>
+      <div class="cta">
+        <a class="btn primary" href="#promos">⭐ Promociones</a>
+        <a class="btn ghost" href="#catalogo">📑 Ver Catálogo</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x150/cce5ff/333?text=Zapatos" alt="Zapatos">
-      <h3>Zapatos Deportivos</h3>
-      <p>$120.000</p>
+  </section>
+
+  <!-- Catálogo -->
+  <section id="catalogo" class="section">
+    <h2>Catálogo</h2>
+
+    <form class="filters" aria-label="Filtros del catálogo">
+      <fieldset>
+        <legend>Categorías</legend>
+        <label><input type="radio" name="cat" checked> Todos</label>
+        <label><input type="radio" name="cat"> Panes</label>
+        <label><input type="radio" name="cat"> Galletas</label>
+        <label><input type="radio" name="cat"> Granolas</label>
+        <label><input type="radio" name="cat"> Amasijos</label>
+        <label><input type="radio" name="cat"> Frutos secos</label>
+        <label><input type="radio" name="cat"> Envasados</label>
+      </fieldset>
+      <label class="filters__search">
+        <span class="sr-only">Buscar por nombre o ingrediente</span>
+        <input type="search" placeholder="Buscar por nombre o ingrediente" />
+      </label>
+    </form>
+
+    <div class="grid products">
+      <!-- Card 1 -->
+      <article class="card">
+        <a href="#p1" class="card__media">
+          <img src="assets/pan_artesanal.svg" alt="Pan artesanal" />
+        </a>
+        <div class="card__body">
+          <h3>Pan Artesanal Integral</h3>
+          <p>Hecho con harina integral de trigo, linaza y yacón.</p>
+          <div class="price">$15.000 COP</div>
+          <div class="card__actions">
+            <a class="btn sm" href="#p1">Ver</a>
+            <a class="btn sm outline" href="#carrito">Añadir</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <a href="#p2" class="card__media">
+          <img src="assets/amasijos.svg" alt="Amasijos" />
+        </a>
+        <div class="card__body">
+          <h3>Amasijos de Quinua</h3>
+          <p>Receta casera con quinua y amaranto.</p>
+          <div class="price">$12.000 COP</div>
+          <div class="card__actions">
+            <a class="btn sm" href="#p2">Ver</a>
+            <a class="btn sm outline" href="#carrito">Añadir</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <a href="#p3" class="card__media">
+          <img src="assets/galletas.svg" alt="Galletas" />
+        </a>
+        <div class="card__body">
+          <h3>Galletas Integrales</h3>
+          <p>Con panela, avena y chips de cacao.</p>
+          <div class="price">$10.000 COP</div>
+          <div class="card__actions">
+            <a class="btn sm" href="#p3">Ver</a>
+            <a class="btn sm outline" href="#carrito">Añadir</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <a href="#p4" class="card__media">
+          <img src="assets/granola.svg" alt="Granola" />
+        </a>
+        <div class="card__body">
+          <h3>Granola Artesanal</h3>
+          <p>Con frutos secos, semillas y miel.</p>
+          <div class="price">$18.000 COP</div>
+          <div class="card__actions">
+            <a class="btn sm" href="#p4">Ver</a>
+            <a class="btn sm outline" href="#carrito">Añadir</a>
+          </div>
+        </div>
+      </article>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x150/d5ffcc/333?text=Reloj" alt="Reloj">
-      <h3>Reloj de Pulsera</h3>
-      <p>$95.000</p>
+
+    <nav class="pagination" aria-label="Paginación">
+      <a href="#" aria-label="Anterior">‹</a>
+      <a class="is-active" href="#">1</a>
+      <a href="#">2</a>
+      <a href="#" aria-label="Siguiente">›</a>
+    </nav>
+  </section>
+
+  <!-- Detalles (simulados con :target) -->
+  <div class="modal" id="p1">
+    <div class="modal__box">
+      <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
+      <div class="modal__media">
+        <img src="assets/pan_artesanal.svg" alt="Pan artesanal integral">
+      </div>
+      <div class="modal__body">
+        <h3>Pan Artesanal Integral</h3>
+        <p>Ingredientes: harina integral de trigo, linaza, yacón, sal marina. Beneficios: alto en fibra, saciante y delicioso.</p>
+        <p>Recomendación: ideal para desayunos y onces.</p>
+        <div class="price">$15.000 COP</div>
+        <a class="btn" href="#carrito">Añadir al carrito</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x150/f7e6ff/333?text=Mochila" alt="Mochila">
-      <h3>Mochila Escolar</h3>
-      <p>$65.000</p>
+  </div>
+
+  <div class="modal" id="p2">
+    <div class="modal__box">
+      <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
+      <div class="modal__media">
+        <img src="assets/amasijos.svg" alt="Amasijos de quinua">
+      </div>
+      <div class="modal__body">
+        <h3>Amasijos de Quinua</h3>
+        <p>Ingredientes: quinua, amaranto, huevo, panela. Beneficios: fuente de proteína vegetal.</p>
+        <div class="price">$12.000 COP</div>
+        <a class="btn" href="#carrito">Añadir al carrito</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x150/fff2cc/333?text=Auriculares" alt="Auriculares">
-      <h3>Auriculares Bluetooth</h3>
-      <p>$80.000</p>
+  </div>
+
+  <div class="modal" id="p3">
+    <div class="modal__box">
+      <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
+      <div class="modal__media">
+        <img src="assets/galletas.svg" alt="Galletas integrales">
+      </div>
+      <div class="modal__body">
+        <h3>Galletas Integrales</h3>
+        <p>Ingredientes: avena, harina integral, panela, chips de cacao.</p>
+        <div class="price">$10.000 COP</div>
+        <a class="btn" href="#carrito">Añadir al carrito</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x150/ccffe5/333?text=Gorra" alt="Gorra">
-      <h3>Gorra Negra</h3>
-      <p>$25.000</p>
+  </div>
+
+  <div class="modal" id="p4">
+    <div class="modal__box">
+      <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
+      <div class="modal__media">
+        <img src="assets/granola.svg" alt="Granola artesanal">
+      </div>
+      <div class="modal__body">
+        <h3>Granola Artesanal</h3>
+        <p>Ingredientes: avena, maní, almendras, semillas y miel.</p>
+        <div class="price">$18.000 COP</div>
+        <a class="btn" href="#carrito">Añadir al carrito</a>
+      </div>
     </div>
-  </main>
+  </div>
+
+  <!-- Carrito (estático) -->
+  <section id="carrito" class="section">
+    <h2>Carrito de compras</h2>
+    <div class="cart">
+      <table>
+        <thead>
+          <tr><th>Producto</th><th>Cant.</th><th>Precio</th><th>Subtotal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pan Artesanal Integral</td><td>1</td><td>$15.000</td><td>$15.000</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="3" class="right">Subtotal</td><td>$15.000</td></tr>
+          <tr><td colspan="3" class="right">Domicilio (estimado)</td><td>$5.000</td></tr>
+          <tr><td colspan="3" class="right total">Total</td><td class="total">$20.000</td></tr>
+        </tfoot>
+      </table>
+
+      <form class="checkout">
+        <fieldset>
+          <legend>Método de entrega</legend>
+          <label><input type="radio" name="envio" checked> Recoger en tienda</label>
+          <label><input type="radio" name="envio"> Envío a domicilio</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Pago</legend>
+          <label><input type="radio" name="pago" checked> Nequi</label>
+          <label><input type="radio" name="pago"> PSE</label>
+          <label><input type="radio" name="pago"> Tarjeta</label>
+          <label><input type="radio" name="pago"> Contra entrega</label>
+        </fieldset>
+
+        <button class="btn primary" type="submit">Confirmar pedido</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Login / Registro -->
+  <section id="login" class="section">
+    <h2>Ingreso / Registro</h2>
+    <div class="auth">
+      <form>
+        <label>Correo o celular
+          <input type="text" placeholder="correo@ejemplo.com o 3001234567" required>
+        </label>
+        <label>Contraseña
+          <input type="password" placeholder="********" required>
+        </label>
+        <label>Nombre de usuario
+          <input type="text" placeholder="anita_cliente">
+        </label>
+        <button class="btn primary" type="submit">Entrar</button>
+      </form>
+      <p class="hint">Tus datos se guardarán para próximos pedidos.</p>
+    </div>
+  </section>
+
+  <!-- Sobre nosotros -->
+  <section id="sobre" class="section about">
+    <h2>Sobre nosotros</h2>
+    <p>Hace más de 15 años, Anita descubrió su pasión por amasar durante un proceso de rehabilitación. Hoy ofrece productos integrales con ingredientes como quinua, yacón y linaza, manteniendo un enfoque artesanal y saludable.</p>
+    <div class="about__gallery">
+      <img src="assets/pan_artesanal.svg" alt="Proceso artesanal 1">
+      <img src="assets/galletas.svg" alt="Proceso artesanal 2">
+      <img src="assets/granola.svg" alt="Proceso artesanal 3">
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="section contact">
+    <h2>Contacto</h2>
+    <div class="contact__wrap">
+      <form class="contact__form">
+        <label>Nombre<input type="text" placeholder="Tu nombre"></label>
+        <label>Correo<input type="email" placeholder="tu@correo.com"></label>
+        <label>Mensaje<textarea rows="4" placeholder="¿Preguntas, sugerencias o pedidos especiales?"></textarea></label>
+        <button class="btn" type="submit">Enviar</button>
+      </form>
+      <div class="contact__meta">
+        <p><strong>Puntos de venta:</strong></p>
+        <p>Sede principal: Calle 123 # 45 - 67, Bogotá</p>
+        <p>Tel/WhatsApp: 300 000 0000</p>
+        <div class="map" role="img" aria-label="Mapa de ubicación">
+          <span>Mapa</span>
+        </div>
+        <p class="rrss">
+          <a href="#" aria-label="Instagram">Instagram</a> ·
+          <a href="#" aria-label="Facebook">Facebook</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Alimentos Saludables y Artesanales</p>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a class="whatsapp" href="https://wa.me/573000000000" target="_blank" aria-label="Chatear por WhatsApp">💬</a>
 </body>
 </html>
