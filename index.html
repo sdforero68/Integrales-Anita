@@ -19,12 +19,12 @@
 
     <form class="search" action="#catalogo" method="get">
       <input type="search" name="q" placeholder="buscar..." aria-label="Buscar" />
-      <button class="icon" aria-label="Buscar">🔍</button>
+      <button class="icon" aria-label="Buscar" type="submit">🔍</button>
     </form>
 
     <nav class="actions" aria-label="Acciones">
       <a class="icon" href="#login" aria-label="Iniciar sesión">👤</a>
-      <a class="icon" href="#carrito" aria-label="Carrito">🛒<span class="badge" aria-hidden="true">0</span></a>
+      <a class="icon" href="#carrito" aria-label="Carrito">🛒<span id="cart-badge" class="badge" aria-hidden="true">0</span></a>
       <a class="icon" href="#contacto" aria-label="Ubicación">📍</a>
     </nav>
   </header>
@@ -64,7 +64,7 @@
 
     <div class="grid products">
       <!-- Card 1 -->
-      <article class="card">
+      <article class="card" data-id="p1" data-name="Pan Artesanal Integral" data-price="15000">
         <a href="#p1" class="card__media">
           <img src="assets/pan_artesanal.svg" alt="Pan artesanal" />
         </a>
@@ -73,14 +73,15 @@
           <p>Hecho con harina integral de trigo, linaza y yacón.</p>
           <div class="price">$15.000 COP</div>
           <div class="card__actions">
+            <label class="qtylabel">Cant. <input class="qty" type="number" min="1" step="1" value="1" inputmode="numeric"></label>
+            <button class="btn sm outline add-to-cart" type="button">Añadir</button>
             <a class="btn sm" href="#p1">Ver</a>
-            <a class="btn sm outline" href="#carrito">Añadir</a>
           </div>
         </div>
       </article>
 
       <!-- Card 2 -->
-      <article class="card">
+      <article class="card" data-id="p2" data-name="Amasijos de Quinua" data-price="12000">
         <a href="#p2" class="card__media">
           <img src="assets/amasijos.svg" alt="Amasijos" />
         </a>
@@ -89,14 +90,15 @@
           <p>Receta casera con quinua y amaranto.</p>
           <div class="price">$12.000 COP</div>
           <div class="card__actions">
+            <label class="qtylabel">Cant. <input class="qty" type="number" min="1" step="1" value="1" inputmode="numeric"></label>
+            <button class="btn sm outline add-to-cart" type="button">Añadir</button>
             <a class="btn sm" href="#p2">Ver</a>
-            <a class="btn sm outline" href="#carrito">Añadir</a>
           </div>
         </div>
       </article>
 
       <!-- Card 3 -->
-      <article class="card">
+      <article class="card" data-id="p3" data-name="Galletas Integrales" data-price="10000">
         <a href="#p3" class="card__media">
           <img src="assets/galletas.svg" alt="Galletas" />
         </a>
@@ -105,14 +107,15 @@
           <p>Con panela, avena y chips de cacao.</p>
           <div class="price">$10.000 COP</div>
           <div class="card__actions">
+            <label class="qtylabel">Cant. <input class="qty" type="number" min="1" step="1" value="1" inputmode="numeric"></label>
+            <button class="btn sm outline add-to-cart" type="button">Añadir</button>
             <a class="btn sm" href="#p3">Ver</a>
-            <a class="btn sm outline" href="#carrito">Añadir</a>
           </div>
         </div>
       </article>
 
       <!-- Card 4 -->
-      <article class="card">
+      <article class="card" data-id="p4" data-name="Granola Artesanal" data-price="18000">
         <a href="#p4" class="card__media">
           <img src="assets/granola.svg" alt="Granola" />
         </a>
@@ -121,8 +124,9 @@
           <p>Con frutos secos, semillas y miel.</p>
           <div class="price">$18.000 COP</div>
           <div class="card__actions">
+            <label class="qtylabel">Cant. <input class="qty" type="number" min="1" step="1" value="1" inputmode="numeric"></label>
+            <button class="btn sm outline add-to-cart" type="button">Añadir</button>
             <a class="btn sm" href="#p4">Ver</a>
-            <a class="btn sm outline" href="#carrito">Añadir</a>
           </div>
         </div>
       </article>
@@ -136,7 +140,7 @@
     </nav>
   </section>
 
-  <!-- Detalles (simulados con :target) -->
+  <!-- Modals de detalle (contenido igual, sin lógica del carrito para mantener HTML editable) -->
   <div class="modal" id="p1">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
@@ -145,14 +149,12 @@
       </div>
       <div class="modal__body">
         <h3>Pan Artesanal Integral</h3>
-        <p>Ingredientes: harina integral de trigo, linaza, yacón, sal marina. Beneficios: alto en fibra, saciante y delicioso.</p>
-        <p>Recomendación: ideal para desayunos y onces.</p>
+        <p>Ingredientes: harina integral de trigo, linaza, yacón, sal marina. Beneficios: alto en fibra.</p>
         <div class="price">$15.000 COP</div>
-        <a class="btn" href="#carrito">Añadir al carrito</a>
+        <a class="btn" href="#catalogo">Volver</a>
       </div>
     </div>
   </div>
-
   <div class="modal" id="p2">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
@@ -161,13 +163,12 @@
       </div>
       <div class="modal__body">
         <h3>Amasijos de Quinua</h3>
-        <p>Ingredientes: quinua, amaranto, huevo, panela. Beneficios: fuente de proteína vegetal.</p>
+        <p>Ingredientes: quinua, amaranto, huevo, panela.</p>
         <div class="price">$12.000 COP</div>
-        <a class="btn" href="#carrito">Añadir al carrito</a>
+        <a class="btn" href="#catalogo">Volver</a>
       </div>
     </div>
   </div>
-
   <div class="modal" id="p3">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
@@ -178,11 +179,10 @@
         <h3>Galletas Integrales</h3>
         <p>Ingredientes: avena, harina integral, panela, chips de cacao.</p>
         <div class="price">$10.000 COP</div>
-        <a class="btn" href="#carrito">Añadir al carrito</a>
+        <a class="btn" href="#catalogo">Volver</a>
       </div>
     </div>
   </div>
-
   <div class="modal" id="p4">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
@@ -193,30 +193,28 @@
         <h3>Granola Artesanal</h3>
         <p>Ingredientes: avena, maní, almendras, semillas y miel.</p>
         <div class="price">$18.000 COP</div>
-        <a class="btn" href="#carrito">Añadir al carrito</a>
+        <a class="btn" href="#catalogo">Volver</a>
       </div>
     </div>
   </div>
 
-  <!-- Carrito (estático) -->
+  <!-- Carrito dinámico -->
   <section id="carrito" class="section">
     <h2>Carrito de compras</h2>
     <div class="cart">
       <table>
         <thead>
-          <tr><th>Producto</th><th>Cant.</th><th>Precio</th><th>Subtotal</th></tr>
+          <tr><th>Producto</th><th>Cant.</th><th>Precio</th><th>Subtotal</th><th></th></tr>
         </thead>
-        <tbody>
-          <tr><td>Pan Artesanal Integral</td><td>1</td><td>$15.000</td><td>$15.000</td></tr>
+        <tbody id="cart-body">
+          <!-- filas generadas por JS -->
         </tbody>
         <tfoot>
-          <tr><td colspan="3" class="right">Subtotal</td><td>$15.000</td></tr>
-          <tr><td colspan="3" class="right">Domicilio (estimado)</td><td>$5.000</td></tr>
-          <tr><td colspan="3" class="right total">Total</td><td class="total">$20.000</td></tr>
+          <tr><td colspan="3" class="right">Total productos</td><td id="cart-subtotal">$0</td><td></td></tr>
         </tfoot>
       </table>
 
-      <form class="checkout">
+      <form class="checkout" onsubmit="return false">
         <fieldset>
           <legend>Método de entrega</legend>
           <label><input type="radio" name="envio" checked> Recoger en tienda</label>
@@ -240,7 +238,7 @@
   <section id="login" class="section">
     <h2>Ingreso / Registro</h2>
     <div class="auth">
-      <form>
+      <form onsubmit="return false">
         <label>Correo o celular
           <input type="text" placeholder="correo@ejemplo.com o 3001234567" required>
         </label>
@@ -271,7 +269,7 @@
   <section id="contacto" class="section contact">
     <h2>Contacto</h2>
     <div class="contact__wrap">
-      <form class="contact__form">
+      <form class="contact__form" onsubmit="return false">
         <label>Nombre<input type="text" placeholder="Tu nombre"></label>
         <label>Correo<input type="email" placeholder="tu@correo.com"></label>
         <label>Mensaje<textarea rows="4" placeholder="¿Preguntas, sugerencias o pedidos especiales?"></textarea></label>
@@ -299,5 +297,7 @@
 
   <!-- Botón flotante WhatsApp -->
   <a class="whatsapp" href="https://wa.me/573000000000" target="_blank" aria-label="Chatear por WhatsApp">💬</a>
+
+  <script src="script.js"></script>
 </body>
 </html>
