@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
+  <header class="topbar topbar--grid">
     <a class="brand" href="#inicio">
       <img src="assets/logo.svg" alt="Logo Integrales Anita" /><span>Integrales Anita</span>
     </a>
@@ -19,10 +19,11 @@
       <button class="icon" aria-label="Buscar" type="button" id="search-btn">🔍</button>
     </form>
     <nav class="actions" aria-label="Acciones">
+      <a class="icon" href="#inicio" aria-label="Inicio">🏠</a>
+      <a class="icon" href="#contacto" aria-label="Ubicación">📍</a>
+      <a class="icon" href="#carrito" aria-label="Carrito">🛒<span id="cart-badge" class="badge" aria-hidden="true">0</span></a>
       <a class="icon" href="#login" aria-label="Iniciar sesión">👤</a>
       <span id="user-chip" class="user-chip" style="display:none;"></span>
-      <a class="icon" href="#carrito" aria-label="Carrito">🛒<span id="cart-badge" class="badge" aria-hidden="true">0</span></a>
-      <a class="icon" href="#contacto" aria-label="Ubicación">📍</a>
     </nav>
   </header>
 
@@ -60,7 +61,7 @@
     <div class="grid products" id="products">
       
       <article class="card" data-id="p1" data-name="Pan Integral" data-price="15000" data-category="panes">
-        <a href="#p1" class="card__media"><img src="assets/pan_integral.svg" alt="Pan Integral" /></a>
+        <a href="#p1" class="card__media"><img src="assets/pan_integral.jpg" alt="Pan Integral" /></a>
         <div class="card__body">
           <h3>Pan Integral</h3>
           <p>Producto Panes de receta artesanal.</p>
@@ -74,7 +75,7 @@
       </article>
     
       <article class="card" data-id="p2" data-name="Pan de Centeno" data-price="16000" data-category="panes">
-        <a href="#p2" class="card__media"><img src="assets/pan_centeno.svg" alt="Pan de Centeno" /></a>
+        <a href="#p2" class="card__media"><img src="assets/pan_centeno.jpg" alt="Pan de Centeno" /></a>
         <div class="card__body">
           <h3>Pan de Centeno</h3>
           <p>Producto Panes de receta artesanal.</p>
@@ -88,7 +89,7 @@
       </article>
     
       <article class="card" data-id="p3" data-name="Pan de Amaranto" data-price="17000" data-category="panes">
-        <a href="#p3" class="card__media"><img src="assets/pan_amaranto.svg" alt="Pan de Amaranto" /></a>
+        <a href="#p3" class="card__media"><img src="assets/pan_amaranto.jpg" alt="Pan de Amaranto" /></a>
         <div class="card__body">
           <h3>Pan de Amaranto</h3>
           <p>Producto Panes de receta artesanal.</p>
@@ -102,7 +103,7 @@
       </article>
     
       <article class="card" data-id="p4" data-name="Pan relleno con Yacón" data-price="18000" data-category="panes">
-        <a href="#p4" class="card__media"><img src="assets/pan_yacon.svg" alt="Pan relleno con Yacón" /></a>
+        <a href="#p4" class="card__media"><img src="assets/pan_yacon.jpg" alt="Pan relleno con Yacón" /></a>
         <div class="card__body">
           <h3>Pan relleno con Yacón</h3>
           <p>Producto Panes de receta artesanal.</p>
@@ -116,7 +117,7 @@
       </article>
     
       <article class="card" data-id="p5" data-name="Galletas Integrales" data-price="10000" data-category="galletas">
-        <a href="#p5" class="card__media"><img src="assets/galletas_integrales.svg" alt="Galletas Integrales" /></a>
+        <a href="#p5" class="card__media"><img src="assets/galletas_integrales.jpg" alt="Galletas Integrales" /></a>
         <div class="card__body">
           <h3>Galletas Integrales</h3>
           <p>Producto Galletas de receta artesanal.</p>
@@ -130,7 +131,7 @@
       </article>
     
       <article class="card" data-id="p6" data-name="Galletas de Quinua" data-price="11000" data-category="galletas">
-        <a href="#p6" class="card__media"><img src="assets/galletas_quinua.svg" alt="Galletas de Quinua" /></a>
+        <a href="#p6" class="card__media"><img src="assets/galletas_quinua.jpg" alt="Galletas de Quinua" /></a>
         <div class="card__body">
           <h3>Galletas de Quinua</h3>
           <p>Producto Galletas de receta artesanal.</p>
@@ -143,8 +144,8 @@
         </div>
       </article>
     
-      <article class="card" data-id="p7" data-name="Galletas de Cacao" data-price="12000" data-category="galletas">
-        <a href="#p7" class="card__media"><img src="assets/galletas_cacao.svg" alt="Galletas de Cacao" /></a>
+      <article class="card" data-id="p7" data-name="Galletas de Cacao" data-price="12000" data-sale="9900" data-category="galletas">
+        <a href="#p7" class="card__media"><img src="assets/galletas_cacao.jpg" alt="Galletas de Cacao" /></a>
         <div class="card__body">
           <h3>Galletas de Cacao</h3>
           <p>Producto Galletas de receta artesanal.</p>
@@ -157,8 +158,8 @@
         </div>
       </article>
     
-      <article class="card" data-id="p8" data-name="Granola Clásica" data-price="18000" data-category="granolas">
-        <a href="#p8" class="card__media"><img src="assets/granola_clasica.svg" alt="Granola Clásica" /></a>
+      <article class="card" data-id="p8" data-name="Granola Clásica" data-price="18000" data-sale="15000" data-category="granolas">
+        <a href="#p8" class="card__media"><img src="assets/granola_clasica.jpg" alt="Granola Clásica" /></a>
         <div class="card__body">
           <h3>Granola Clásica</h3>
           <p>Producto Granolas de receta artesanal.</p>
@@ -172,7 +173,7 @@
       </article>
     
       <article class="card" data-id="p9" data-name="Granola con Coco" data-price="20000" data-category="granolas">
-        <a href="#p9" class="card__media"><img src="assets/granola_coco.svg" alt="Granola con Coco" /></a>
+        <a href="#p9" class="card__media"><img src="assets/granola_coco.jpg" alt="Granola con Coco" /></a>
         <div class="card__body">
           <h3>Granola con Coco</h3>
           <p>Producto Granolas de receta artesanal.</p>
@@ -186,7 +187,7 @@
       </article>
     
       <article class="card" data-id="p10" data-name="Amasijos de Quinua" data-price="12000" data-category="amasijos">
-        <a href="#p10" class="card__media"><img src="assets/amasijos_quinua.svg" alt="Amasijos de Quinua" /></a>
+        <a href="#p10" class="card__media"><img src="assets/amasijos_quinua.jpg" alt="Amasijos de Quinua" /></a>
         <div class="card__body">
           <h3>Amasijos de Quinua</h3>
           <p>Producto Amasijos de receta artesanal.</p>
@@ -200,7 +201,7 @@
       </article>
     
       <article class="card" data-id="p11" data-name="Amasijos de Queso" data-price="13000" data-category="amasijos">
-        <a href="#p11" class="card__media"><img src="assets/amasijos_queso.svg" alt="Amasijos de Queso" /></a>
+        <a href="#p11" class="card__media"><img src="assets/amasijos_queso.jpg" alt="Amasijos de Queso" /></a>
         <div class="card__body">
           <h3>Amasijos de Queso</h3>
           <p>Producto Amasijos de receta artesanal.</p>
@@ -214,7 +215,7 @@
       </article>
     
       <article class="card" data-id="p12" data-name="Tostadas Integrales" data-price="9000" data-category="tostadas">
-        <a href="#p12" class="card__media"><img src="assets/tostadas_integrales.svg" alt="Tostadas Integrales" /></a>
+        <a href="#p12" class="card__media"><img src="assets/tostadas_integrales.jpg" alt="Tostadas Integrales" /></a>
         <div class="card__body">
           <h3>Tostadas Integrales</h3>
           <p>Producto Tostadas de receta artesanal.</p>
@@ -228,7 +229,7 @@
       </article>
     
       <article class="card" data-id="p13" data-name="Tostadas con Ajonjolí" data-price="9500" data-category="tostadas">
-        <a href="#p13" class="card__media"><img src="assets/tostadas_ajonjoli.svg" alt="Tostadas con Ajonjolí" /></a>
+        <a href="#p13" class="card__media"><img src="assets/tostadas_ajonjoli.jpg" alt="Tostadas con Ajonjolí" /></a>
         <div class="card__body">
           <h3>Tostadas con Ajonjolí</h3>
           <p>Producto Tostadas de receta artesanal.</p>
@@ -242,7 +243,7 @@
       </article>
     
       <article class="card" data-id="p14" data-name="Maní Tostado" data-price="8000" data-category="frutos">
-        <a href="#p14" class="card__media"><img src="assets/mani_tostado.svg" alt="Maní Tostado" /></a>
+        <a href="#p14" class="card__media"><img src="assets/mani_tostado.jpg" alt="Maní Tostado" /></a>
         <div class="card__body">
           <h3>Maní Tostado</h3>
           <p>Producto Frutos de receta artesanal.</p>
@@ -256,7 +257,7 @@
       </article>
     
       <article class="card" data-id="p15" data-name="Almendras" data-price="15000" data-category="frutos">
-        <a href="#p15" class="card__media"><img src="assets/almendras.svg" alt="Almendras" /></a>
+        <a href="#p15" class="card__media"><img src="assets/almendras.jpg" alt="Almendras" /></a>
         <div class="card__body">
           <h3>Almendras</h3>
           <p>Producto Frutos de receta artesanal.</p>
@@ -269,8 +270,8 @@
         </div>
       </article>
     
-      <article class="card" data-id="p16" data-name="Ghee 250g" data-price="23000" data-category="envasados">
-        <a href="#p16" class="card__media"><img src="assets/ghee.svg" alt="Ghee 250g" /></a>
+      <article class="card" data-id="p16" data-name="Ghee 250g" data-price="23000" data-sale="21000" data-category="envasados">
+        <a href="#p16" class="card__media"><img src="assets/ghee.jpg" alt="Ghee 250g" /></a>
         <div class="card__body">
           <h3>Ghee 250g</h3>
           <p>Producto Envasados de receta artesanal.</p>
@@ -284,7 +285,7 @@
       </article>
     
       <article class="card" data-id="p17" data-name="Harina de Quinua 500g" data-price="14000" data-category="envasados">
-        <a href="#p17" class="card__media"><img src="assets/harina_quinua.svg" alt="Harina de Quinua 500g" /></a>
+        <a href="#p17" class="card__media"><img src="assets/harina_quinua.jpg" alt="Harina de Quinua 500g" /></a>
         <div class="card__body">
           <h3>Harina de Quinua 500g</h3>
           <p>Producto Envasados de receta artesanal.</p>
@@ -298,7 +299,7 @@
       </article>
     
       <article class="card" data-id="p18" data-name="Harina de Centeno 500g" data-price="13000" data-category="envasados">
-        <a href="#p18" class="card__media"><img src="assets/harina_centeno.svg" alt="Harina de Centeno 500g" /></a>
+        <a href="#p18" class="card__media"><img src="assets/harina_centeno.jpg" alt="Harina de Centeno 500g" /></a>
         <div class="card__body">
           <h3>Harina de Centeno 500g</h3>
           <p>Producto Envasados de receta artesanal.</p>
@@ -325,7 +326,7 @@
   <div class="modal" id="p1">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/pan_integral.svg" alt="Pan Integral"></div>
+      <div class="modal__media"><img src="assets/pan_integral.jpg" alt="Pan Integral"></div>
       <div class="modal__body">
         <h3>Pan Integral</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -338,7 +339,7 @@
   <div class="modal" id="p2">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/pan_centeno.svg" alt="Pan de Centeno"></div>
+      <div class="modal__media"><img src="assets/pan_centeno.jpg" alt="Pan de Centeno"></div>
       <div class="modal__body">
         <h3>Pan de Centeno</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -351,7 +352,7 @@
   <div class="modal" id="p3">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/pan_amaranto.svg" alt="Pan de Amaranto"></div>
+      <div class="modal__media"><img src="assets/pan_amaranto.jpg" alt="Pan de Amaranto"></div>
       <div class="modal__body">
         <h3>Pan de Amaranto</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -364,7 +365,7 @@
   <div class="modal" id="p4">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/pan_yacon.svg" alt="Pan relleno con Yacón"></div>
+      <div class="modal__media"><img src="assets/pan_yacon.jpg" alt="Pan relleno con Yacón"></div>
       <div class="modal__body">
         <h3>Pan relleno con Yacón</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -377,7 +378,7 @@
   <div class="modal" id="p5">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/galletas_integrales.svg" alt="Galletas Integrales"></div>
+      <div class="modal__media"><img src="assets/galletas_integrales.jpg" alt="Galletas Integrales"></div>
       <div class="modal__body">
         <h3>Galletas Integrales</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -390,7 +391,7 @@
   <div class="modal" id="p6">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/galletas_quinua.svg" alt="Galletas de Quinua"></div>
+      <div class="modal__media"><img src="assets/galletas_quinua.jpg" alt="Galletas de Quinua"></div>
       <div class="modal__body">
         <h3>Galletas de Quinua</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -403,7 +404,7 @@
   <div class="modal" id="p7">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/galletas_cacao.svg" alt="Galletas de Cacao"></div>
+      <div class="modal__media"><img src="assets/galletas_cacao.jpg" alt="Galletas de Cacao"></div>
       <div class="modal__body">
         <h3>Galletas de Cacao</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -416,7 +417,7 @@
   <div class="modal" id="p8">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/granola_clasica.svg" alt="Granola Clásica"></div>
+      <div class="modal__media"><img src="assets/granola_clasica.jpg" alt="Granola Clásica"></div>
       <div class="modal__body">
         <h3>Granola Clásica</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -429,7 +430,7 @@
   <div class="modal" id="p9">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/granola_coco.svg" alt="Granola con Coco"></div>
+      <div class="modal__media"><img src="assets/granola_coco.jpg" alt="Granola con Coco"></div>
       <div class="modal__body">
         <h3>Granola con Coco</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -442,7 +443,7 @@
   <div class="modal" id="p10">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/amasijos_quinua.svg" alt="Amasijos de Quinua"></div>
+      <div class="modal__media"><img src="assets/amasijos_quinua.jpg" alt="Amasijos de Quinua"></div>
       <div class="modal__body">
         <h3>Amasijos de Quinua</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -455,7 +456,7 @@
   <div class="modal" id="p11">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/amasijos_queso.svg" alt="Amasijos de Queso"></div>
+      <div class="modal__media"><img src="assets/amasijos_queso.jpg" alt="Amasijos de Queso"></div>
       <div class="modal__body">
         <h3>Amasijos de Queso</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -468,7 +469,7 @@
   <div class="modal" id="p12">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/tostadas_integrales.svg" alt="Tostadas Integrales"></div>
+      <div class="modal__media"><img src="assets/tostadas_integrales.jpg" alt="Tostadas Integrales"></div>
       <div class="modal__body">
         <h3>Tostadas Integrales</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -481,7 +482,7 @@
   <div class="modal" id="p13">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/tostadas_ajonjoli.svg" alt="Tostadas con Ajonjolí"></div>
+      <div class="modal__media"><img src="assets/tostadas_ajonjoli.jpg" alt="Tostadas con Ajonjolí"></div>
       <div class="modal__body">
         <h3>Tostadas con Ajonjolí</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -494,7 +495,7 @@
   <div class="modal" id="p14">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/mani_tostado.svg" alt="Maní Tostado"></div>
+      <div class="modal__media"><img src="assets/mani_tostado.jpg" alt="Maní Tostado"></div>
       <div class="modal__body">
         <h3>Maní Tostado</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -507,7 +508,7 @@
   <div class="modal" id="p15">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/almendras.svg" alt="Almendras"></div>
+      <div class="modal__media"><img src="assets/almendras.jpg" alt="Almendras"></div>
       <div class="modal__body">
         <h3>Almendras</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -520,7 +521,7 @@
   <div class="modal" id="p16">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/ghee.svg" alt="Ghee 250g"></div>
+      <div class="modal__media"><img src="assets/ghee.jpg" alt="Ghee 250g"></div>
       <div class="modal__body">
         <h3>Ghee 250g</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -533,7 +534,7 @@
   <div class="modal" id="p17">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/harina_quinua.svg" alt="Harina de Quinua 500g"></div>
+      <div class="modal__media"><img src="assets/harina_quinua.jpg" alt="Harina de Quinua 500g"></div>
       <div class="modal__body">
         <h3>Harina de Quinua 500g</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -546,7 +547,7 @@
   <div class="modal" id="p18">
     <div class="modal__box">
       <a class="modal__close" href="#catalogo" aria-label="Cerrar">×</a>
-      <div class="modal__media"><img src="assets/harina_centeno.svg" alt="Harina de Centeno 500g"></div>
+      <div class="modal__media"><img src="assets/harina_centeno.jpg" alt="Harina de Centeno 500g"></div>
       <div class="modal__body">
         <h3>Harina de Centeno 500g</h3>
         <p>Ingredientes y beneficios: elaboración artesanal, sin conservantes.</p>
@@ -604,9 +605,9 @@
     <h2>Sobre nosotros</h2>
     <p>Hace más de 15 años, Anita descubrió su pasión por amasar durante un proceso de rehabilitación...</p>
     <div class="about__gallery">
-      <img src="assets/pan_integral.svg" alt="Proceso artesanal 1">
-      <img src="assets/galletas_integrales.svg" alt="Proceso artesanal 2">
-      <img src="assets/granola_clasica.svg" alt="Proceso artesanal 3">
+      <img src="assets/pan_integral.jpg" alt="Proceso artesanal 1">
+      <img src="assets/galletas_integrales.jpg" alt="Proceso artesanal 2">
+      <img src="assets/granola_clasica.jpg" alt="Proceso artesanal 3">
     </div>
   </section>
 

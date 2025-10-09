@@ -46,7 +46,7 @@
   $$('.add-to-cart').forEach(btn=>{
     btn.onclick=()=>{
       const card=btn.closest('.card');
-      addItem(card.dataset.id, card.dataset.name, parseInt(card.dataset.price,10), card.querySelector('.qty').value);
+      addItem(card.dataset.id, card.dataset.name, parseInt(card.dataset.sale || card.dataset.price,10), card.querySelector('.qty').value);
       btn.textContent='Añadido ✓'; setTimeout(()=>btn.textContent='Añadir',900);
     };
   });
@@ -77,3 +77,25 @@
   if($searchBtn){ $searchBtn.onclick=applyFilters; }
   applyFilters();
 })();
+  // ---- Mostrar precios con promo old/new
+  function updatePriceBadges(){
+    document.querySelectorAll('.card').forEach(card=>{
+      const priceEl = card.querySelector('.price');
+      const price = parseInt(card.dataset.price,10);
+      const sale = card.dataset.sale ? parseInt(card.dataset.sale,10) : null;
+      if(!priceEl) return;
+      if(sale && sale < price){
+        priceEl.innerHTML = `<span class="old">$${fmt(price)}</span> <span class="new">$${fmt(sale)}</span> COP`;
+      }else{
+        priceEl.textContent = `$${fmt(price)} COP`;
+      }
+    });
+  }
+  updatePriceBadges();
+
+  // ---- Poblar sección de Promociones con las cards que tienen data-sale
+  const promosGrid = document.getElementById('promos-grid');
+  if(promosGrid){
+    const promoCards = [...document.querySelectorAll('.card[data-sale]')].slice(0, 8);
+    promoCards.forEach(c=>promosGrid.appendChild(c.cloneNode(true)));
+  }

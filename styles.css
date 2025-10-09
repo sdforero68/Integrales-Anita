@@ -78,3 +78,23 @@ img{max-width:100%;display:block}
 .footer{background:#3e2c22;color:#fff;text-align:center;padding:1rem;border-top:4px solid var(--acento)}
 .whatsapp{position:fixed;right:14px;bottom:14px;width:54px;height:54px;border-radius:50%;background:#90ab44;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:var(--shadow)}
 /* A11y */ .sr-only{position:absolute;left:-9999px}
+
+
+/* Header as 3-column grid: brand | search centered | actions */
+.topbar--grid{display:grid;grid-template-columns:1fr minmax(280px, 640px) 1fr;align-items:center}
+.topbar--grid .brand{grid-column:1}
+.topbar--grid .search{grid-column:2;justify-self:center}
+.topbar--grid .actions{grid-column:3;justify-self:end}
+
+/* Promotions */
+.promos__note{text-align:center;margin:.25rem 0 1rem}
+.card[data-sale] .price{display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap}
+.card[data-sale] .price::before{content:"Precio promo";font-size:.75rem;background:var(--verde);color:#fff;border-radius:10px;padding:.1rem .5rem}
+.price .old{color:#8c7a6d;text-decoration:line-through}
+.price .new{color:var(--acento);font-weight:800}
+/* Optional ribbon */
+.card[data-sale] .card__media{position:relative}
+.card[data-sale] .card__media::after{
+  content:"PROMO";position:absolute;top:8px;left:-8px;background:var(--acento);color:#fff;
+  padding:.25rem .5rem;transform:rotate(-12deg);border-radius:6px;box-shadow:var(--shadow);font-weight:700;font-size:.8rem
+}
